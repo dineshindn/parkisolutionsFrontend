@@ -87,13 +87,13 @@ function CreateJob() {
                 <Input type="Number" />
               </Form.Item>
 
-              {1 == 2 ? (
+              {1 == 1 ? (
                 <>
-                  <label>Contact - Date</label>
+                  
                   <Form.Item
                     className="form-input form-controll"
                     name="contact-date"
-                  >
+                  ><label>Contact - Date</label>
                     <Input />
                   </Form.Item>
                   <Form.Item className="form-input form-controll">
