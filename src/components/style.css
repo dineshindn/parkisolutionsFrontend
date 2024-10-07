@@ -1,0 +1,37 @@
+.main-card {
+    background: #fff;
+    margin: 0 auto;
+    /* width: 95%; */
+    border: 2px solid #6633992b;
+    margin-top: 50px;
+}
+
+.main {
+    margin: 0 auto;
+    /* width: 90%;  */
+}
+
+h2 {
+    color: #393333;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+p {
+    padding: 0px;
+    margin-top: -16px;
+
+}
+
+.spans {
+    color: red;
+}
+
+label {
+    font-weight: 600;
+    font-size: 16px; 
+}
+.ant-input-outlined {
+    border-color: #232222;
+    height: 33px !important;
+}
