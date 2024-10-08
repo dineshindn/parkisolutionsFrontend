@@ -1,20 +1,31 @@
-import logo from "./logo.svg";
-import "./App.css";
-import CreateJob from "./components/jobComponent";
-import { Fragment } from "react";
-import { Row, Col } from "antd";
+import React, { lazy, Suspense } from "react"; // Move all imports to the top
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom"; // Import Navigate
+import SpinnerComponent from "./app/components/common/Spinner";
+import NotFound from "./app/components/common/NotFound";
+
+const JobsMain = lazy(() => import("./app/containers/jobs"));
 
 function App() {
   return (
-    <Fragment>
-      <div className="row container">
-        <Row>
-          <Col span={24}>
-            <CreateJob />
-          </Col>
-        </Row>
-      </div>
-    </Fragment>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/jobs" />} />
+        <Route
+          path="/jobs"
+          element={
+            <Suspense fallback={<SpinnerComponent />}>
+              <JobsMain />
+            </Suspense>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 
